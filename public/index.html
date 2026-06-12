@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Task management</p>
+      <h1>Task Manager</h1>
+      <p class="subhead">Build, update, and track tasks with authentication and real-time sync.</p>
+    </div>
+    <button id="logoutBtn" class="button secondary" hidden>Logout</button>
+  </header>
+
+  <main class="container">
+    <section id="authSection" class="card auth-card">
+      <div class="auth-tabs">
+        <button id="loginTab" class="tab active">Login</button>
+        <button id="registerTab" class="tab">Register</button>
+      </div>
+      <form id="authForm" class="form-grid">
+        <div class="form-row hidden" id="nameRow">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="6" placeholder="Password" required />
+        </div>
+        <button type="submit" class="button">Continue</button>
+        <p class="form-message" id="authMessage"></p>
+      </form>
+    </section>
+
+    <section id="taskSection" class="hidden">
+      <div class="section-header">
+        <h2>Your tasks</h2>
+        <p>Manage priorities, status, and due dates in one place.</p>
+      </div>
+      <div class="task-layout">
+        <form id="taskForm" class="card form-card">
+          <h3>Add a task</h3>
+          <label for="taskTitle">Title</label>
+          <input id="taskTitle" name="title" type="text" placeholder="Task title" required />
+
+          <label for="taskDescription">Description</label>
+          <textarea id="taskDescription" name="description" rows="3" placeholder="Optional details"></textarea>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="taskPriority">Priority</label>
+              <select id="taskPriority" name="priority">
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="taskStatus">Status</label>
+              <select id="taskStatus" name="status">
+                <option value="todo">To do</option>
+                <option value="in-progress">In progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="taskDueDate">Due date</label>
+          <input id="taskDueDate" name="dueDate" type="date" />
+
+          <button type="submit" class="button">Save task</button>
+          <p class="form-message" id="taskMessage"></p>
+        </form>
+
+        <div class="task-board card">
+          <div id="tasksList" class="tasks-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with Node.js, Express, MongoDB, JWT, and Socket.io.</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
