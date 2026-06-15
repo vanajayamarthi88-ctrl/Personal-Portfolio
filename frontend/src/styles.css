@@ -1,0 +1,17 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f6f7fb; color: #222; }
+.app-shell { max-width: 1200px; margin: 0 auto; padding: 12px; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+header a { margin-right: 16px; text-decoration: none; color: #333; font-weight: bold; }
+header nav { display: flex; align-items: center; }
+button { padding: 8px 12px; border: none; background: #007bff; color: white; cursor: pointer; border-radius: 4px; }
+button:hover { opacity: 0.9; }
+main { background: white; padding: 24px; border-radius: 8px; box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.card { border: 1px solid #e1e1e1; padding: 16px; border-radius: 10px; background: white; }
+.card h3 { margin: 0 0 8px; }
+.card p { margin: 8px 0; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 14px; }
+.form-group label { margin-bottom: 6px; }
+.form-group input, .form-group textarea, .form-group select { padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+.table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.table th, .table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
